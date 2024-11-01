@@ -16,7 +16,7 @@ if fl is not None:
     st.write(fl.name)
     df = pd.read_csv(fl)
 else:
-    os.chdir(r'C:/M1 DSIA/streamlite')
+    # os.chdir(r'C:/M1 DSIA/streamlite')
     df = pd.read_csv('donnees_ventes_etudiants_mis_a_jour.csv')
 
 st.title('Tableau de bord pour les ventes')
