@@ -29,15 +29,17 @@ df['order_date'] = pd.to_datetime(df["order_date"])
 
 startdate = df["order_date"].min()
 enddate = df["order_date"].max()
+
 df_filtered = df.copy()
 
-region = st.sidebar.multiselect("Region", df['Region'].unique())
+region = st.sidebar.multiselect("Region", df_filtered['Region'].unique())
 if region:
     df_filtered = df_filtered[df_filtered['Region'].isin(region)]
 
 state = st.sidebar.multiselect("State", df_filtered['state_full'].unique())
 if state:
     df_filtered = df_filtered[df_filtered['state_full'].isin(state)]
+
 
 county = st.sidebar.multiselect("County", df_filtered['County'].unique())
 if county:
